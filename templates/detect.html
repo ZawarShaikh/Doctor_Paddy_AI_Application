@@ -1,0 +1,121 @@
+<!-- Detect Disease Page -->
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Paddy - Detect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='detect.css') }}">
+</head>
+
+
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">
+                <img src="{{ url_for('static', filename='images/logo_doctor.png') }}" alt="Doctor Paddy Logo">
+            </a>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/detect">Detect Disease</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="upload-section">
+            <h2>Upload an Image</h2>
+            <form action="/detect" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/*" required>
+                <button type="submit">Detect Disease</button>
+            </form>
+        </section>
+
+        {% if prediction and file_name %}
+        <div class="results-container">
+            <!-- Prediction Result Section -->
+            <section class="result-section">
+                <h2>Prediction Result</h2>
+                <p><strong>Detected Disease:</strong> {{ prediction }}</p>
+                <img src="{{ url_for('static', filename='uploads/' +  file_name) }}" alt="Uploaded Image" width="400px">
+            </section>
+
+            <!-- Recommendation Section -->
+            <section class="recommendation-section">
+                <h2>Recommendations</h2>
+                <p id="recommendation-text">
+                    {% if recommendations %}
+                        <ul>
+                            {% for rec in recommendations %}
+                                <li>{{ rec }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>Good news!!! Your crop is healthy. No recommendations needed.</p>
+                    {% endif %}
+                </p>
+            </section>
+        </div>
+        {% endif %}
+
+        <!-- New Image Gallery Section -->
+        <section class="disease-gallery">
+            <h2>Common Rice Diseases</h2>
+            <div class="image-row">
+                <div class="image-item">
+                    <img src="{{ url_for('static', filename='images/bacterial_leaf_blight.jpg') }}" alt="Bacterial Leaf Blight">
+                    <p>Bacterial Leaf Blight</p>
+                </div>
+                <div class="image-item">
+                    <img src="{{ url_for('static', filename='images/brown_spots.jpg') }}" alt="Brown Spot">
+                    <p>Brown Spot</p>
+                </div>
+                <div class="image-item">
+                    <img src="{{ url_for('static', filename='images/blast.jpg') }}" alt="Rice Blast">
+                    <p>Rice Blast</p>
+                </div>
+                <div class="image-item">
+                    <img src="{{ url_for('static', filename='images/bacterial_leaf_steak.jpg') }}" alt="Rice Blast">
+                    <p>Bacterial Leaf Steak</p>
+                </div>
+                <div class="image-item">
+                    <img src="{{ url_for('static', filename='images/dead_heart.jpg') }}" alt="Rice Blast">
+                    <p>Dead Heart</p>
+                </div>
+            </div>
+
+            <div class="image-row">
+                <div class="image-item">
+                    <img src="{{ url_for('static', filename='images/downy_mildew.jpg') }}" alt="Sheath Blight">
+                    <p>Downy Mildew</p>
+                </div>
+                <div class="image-item">
+                    <img src="{{ url_for('static', filename='images/hispa.jpg') }}" alt="Tungro Disease">
+                    <p>Hispa</p>
+                </div>
+                <div class="image-item">
+                    <img src="{{ url_for('static', filename='images/panicle_blight.jpg') }}" alt="Leaf Scald">
+                    <p>Panicle Blight</p>
+                </div>
+                <div class="image-item">
+                    <img src="{{ url_for('static', filename='images/tungro.jpg') }}" alt="Leaf Scald">
+                    <p>Tungro</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div>
+
+    </div>
+    <footer>
+        <p>&copy; 2025 Doctor Paddy. All rights reserved.</p>
+    </footer>
+</body>
+
+
+</html>

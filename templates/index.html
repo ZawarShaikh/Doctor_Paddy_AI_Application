@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Paddy - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+
+
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">
+                <img src="{{ url_for('static', filename='images/logo_doctor.png') }}" alt="Doctor Paddy Logo">
+            </a>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/detect">Detect Disease</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="intro">
+            <h2>Welcome to Doctor Paddy</h2>
+            <p>An AI-powered system for detecting and managing rice crop diseases.</p>
+            <!-- <a href="/detect" class="btn">Get Started</a> -->
+        </section>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Empowering Farmers with AI-Driven Rice Disease Detection</h1>
+                <p>Doctor Paddy is an AI-powered tool that helps farmers detect and manage rice crop diseases efficiently.</p>
+                <a href="/detect" class="btn">Start Detection</a>
+            </div>
+        </section>
+
+        <!-- Key Features Section -->
+        <section class="features-section">
+            <h2>Why Choose Doctor Paddy?</h2>
+            <div class="features-container">
+                <div class="feature-box">
+                    <img src="{{ url_for('static', filename='images/AI_icon.png') }}" alt="AI-Powered">
+                    <h3>AI-Powered Diagnosis</h3>
+                    <p>Our deep learning models provide accurate rice disease detection.</p>
+                </div>
+                <div class="feature-box">
+                    <img src="{{ url_for('static', filename='images/realtime.png') }}" alt="Real-Time">
+                    <h3>Real-Time Analysis</h3>
+                    <p>Get instant results by uploading an image of your rice crop.</p>
+                </div>
+                <div class="feature-box">
+                    <img src="{{ url_for('static', filename='images/actionable_rec.png') }}" alt="Recommendations">
+                    <h3>Actionable Recommendations</h3>
+                    <p>Receive expert suggestions to manage and treat detected diseases.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <h3>1. Upload an Image</h3>
+                    <p>Take a photo of your rice crop and upload it.</p>
+                </div>
+                <div class="step">
+                    <h3>2. AI Analysis</h3>
+                    <p>Our model analyzes the image to detect potential diseases.</p>
+                </div>
+                <div class="step">
+                    <h3>3. Get Results</h3>
+                    <p>Receive disease classification and treatment recommendations.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Doctor Paddy. All rights reserved.</p>
+    </footer>
+</body>
+
+
+</html>

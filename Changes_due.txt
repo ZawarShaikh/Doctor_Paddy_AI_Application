@@ -1,0 +1,28 @@
+Add logo on nav bar - done
+ 
+About page : 
+add more info - done
+add images - done 
+Add some fuctionalities like this website: https://www.irri.org/about-us
+
+Add multiple images and make them change automatically after some seconds.  
+
+
+Intro page :
+Add some more info
+
+
+Contact Page :
+send customer contact details to inbox 
+
+Deploy web app on cloud 
+
+
+
+
+Timeline: 
+Code part - till 23rd march 
+FYP report - 30th march
+Management of project - till 4rth 
+Artifect - till 4rth april 
+ppt - 5 or 6th april

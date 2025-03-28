@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Paddy - About</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    
+</head>
+
+
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">
+                <img src="{{ url_for('static', filename='images/logo_doctor.png') }}" alt="Doctor Paddy Logo">
+            </a>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/detect">Detect Disease</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Hero Image Section with Slideshow -->
+        <section class="hero-section">
+            <div class="slideshow-container">
+                <img src="{{ url_for('static', filename='images/sliding_images/image2.jpg') }}" class="hero-image fade" alt="Rice Field 1">
+                <img src="{{ url_for('static', filename='images/sliding_images/image3.jpg') }}" class="hero-image fade" alt="Rice Field 1">
+                <img src="{{ url_for('static', filename='images/sliding_images/image4.jpg') }}" class="hero-image fade" alt="Rice Field 1">
+                <img src="{{ url_for('static', filename='images/sliding_images/image5.jpg') }}" class="hero-image fade" alt="Rice Field 1">
+                <img src="{{ url_for('static', filename='images/sliding_images/image6.jpg') }}" class="hero-image fade" alt="Rice Field 1">
+                
+                
+            </div>
+        </section>
+
+        <!-- Our Mission Section -->
+        <section class="mission-section">
+            <h2>Our Mission</h2>
+            <p>At Doctor Paddy, our mission is to revolutionize rice crop disease management by leveraging cutting-edge artificial intelligence.</p>
+            <p>We aim to provide farmers with an accurate, efficient, and user-friendly tool for real-time disease detection. By integrating advanced machine learning models, we empower farmers with timely insights to mitigate crop losses, improve agricultural sustainability, and ensure food security. Our commitment is to bridge the gap between technology and agriculture, making disease diagnosis accessible, reliable, and actionable for every farmer.</p>
+        </section>
+
+        <!-- Our Goal Section -->
+        <section class="goal-section">
+            <h2>Our Goal</h2>
+            <p>Our goal is to enhance rice production sustainability by reducing the impact of diseases on crop yield. We strive to achieve this by:</p>
+    
+            <ul class="goal-list">
+                <li><strong>Developing</strong> a highly accurate AI-based detection system for rice diseases.</li>
+                <li><strong>Providing</strong> farmers with real-time disease diagnosis through a simple web application.</li>
+                <li><strong>Minimizing</strong> yield losses caused by undetected diseases at early growth stages.</li>
+                <li><strong>Improving</strong> farming efficiency through data-driven decision-making.</li>
+                <li><strong>Expanding</strong> our technology to support more crops and regions in the future.</li>
+            </ul>
+                    
+            <div class="disease-gallery-about">
+                <div class="disease-item">
+                    <img src="{{ url_for('static', filename='images/bacterial_leaf_blight.jpg') }}" alt="Bacterial Leaf Blight">
+                    <p><strong>Bacterial Leaf Blight:</strong> Causes yellowing and drying of leaves.</p>
+                </div>
+            
+                <div class="disease-item">
+                    <img src="{{ url_for('static', filename='images/brown_spots.jpg') }}" alt="Brown Spot">
+                    <p><strong>Brown Spot:</strong> Leads to brown lesions, affecting photosynthesis.</p>
+                </div>
+            
+                <div class="disease-item">
+                    <img src="{{ url_for('static', filename='images/blast.jpg') }}" alt="Rice Blast">
+                    <p><strong>Rice Blast:</strong> A fungal disease that weakens plant stems and leaves.</p>
+                </div>
+
+                <div class="disease-item">
+                    <img src="{{ url_for('static', filename='images/tungro.jpg') }}" alt="Tungro Disease">
+                    <p><strong>Tungro Disease:</strong> Causes stunted growth and leaf discoloration.</p>
+                </div>
+            
+                <div class="disease-item">
+                    <img src="{{ url_for('static', filename='images/hispa.jpg') }}" alt="Hispa">
+                    <p><strong>Hispa:</strong> A pest that scrapes leaf tissue, reducing plant health.</p>
+                </div>
+            
+                <div class="disease-item">
+                    <img src="{{ url_for('static', filename='images/panicle_blight.jpg') }}" alt="Bacterial Panicle Blight">
+                    <p><strong>Bacterial Panicle Blight:</strong> Leads to grain discoloration and yield loss.</p>
+                </div>
+            </div>
+
+            <p>By detecting these diseases early, we aim to provide farmers with the knowledge and tools to take timely action and prevent crop loss.</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Doctor Paddy. All rights reserved.</p>
+    </footer>
+
+
+    <!-- JavaScript for Slideshow -->
+    <script>
+        let slideIndex = 0;
+        let slides = document.querySelectorAll(".hero-image");
+    
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.opacity = "0"; // Hide all images
+                slides[i].style.transform = "translateX(100%)"; // Move image to right
+            }
+    
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+    
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(() => {
+                slides[slideIndex - 1].style.opacity = "1";
+                slides[slideIndex - 1].style.transform = "translateX(0)"; // Slide in from right
+            }, 100); // Delay to make animation smoother
+    
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+    
+        document.addEventListener("DOMContentLoaded", showSlides);
+    </script>
+</body>
+
+</html>

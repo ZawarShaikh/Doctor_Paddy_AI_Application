@@ -1,0 +1,11 @@
+.venv 
+pdfs
+
+models/filtered_dataset
+models/model_results
+models/test_images
+models/train_images
+
+static/uploads/
+
+#models/vgg19_rice_disease_model_fintuned.h5
