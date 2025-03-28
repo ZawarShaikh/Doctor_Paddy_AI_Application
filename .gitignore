@@ -8,4 +8,4 @@ models/train_images
 
 static/uploads/
 
-#models/vgg19_rice_disease_model_fintuned.h5
+models/vgg19_rice_disease_model_fintuned.h5

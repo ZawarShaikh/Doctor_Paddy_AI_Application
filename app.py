@@ -5,8 +5,6 @@ import tensorflow as tf
 from tensorflow import image 
 import numpy as np
 import cv2
-import smtplib
-from email.mime.text import MIMEText
 from preprocess_image import prepare_image
 
 
